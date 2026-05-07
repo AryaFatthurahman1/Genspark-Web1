@@ -23,6 +23,21 @@
 </head>
 <body>
 
+  <!-- Custom cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Loading screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <div class="loader-text">
+        <span class="loader-brand">ObsidianQ</span>
+        <span class="loader-sub">Initializing Quantum Systems...</span>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ================ NAVIGATION ================ -->
   <nav class="nav" aria-label="Primary">
     <a class="brand" href="#top" aria-label="ObsidianQ home">
@@ -38,6 +53,7 @@
       <a href="#industrial">Industrial</a>
       <a href="#solver">Solver</a>
       <a href="#pipeline">Pipeline</a>
+      <a href="#sustainability">Sustainability</a>
       <a href="#research">Research</a>
     </div>
     <div style="display:flex;gap:8px;align-items:center;">
@@ -53,7 +69,7 @@
 
   <!-- Mobile overlay menu -->
   <div class="mobile-menu">
-    <button class="close" aria-label="Close menu">×</button>
+    <button class="close" aria-label="Close menu">&times;</button>
     <a href="#infrastructure">Infrastructure</a>
     <a href="#logistics">Logistics</a>
     <a href="#industrial">Industrial</a>
@@ -68,11 +84,14 @@
   <header class="hero" id="top">
     <div id="quantum-tower" aria-hidden="true"></div>
 
+    <!-- Floating holographic particles overlay -->
+    <div class="hero-particles" aria-hidden="true"></div>
+
     <div class="container">
       <div class="hero-inner">
         <div>
           <div class="reveal">
-            <span class="eyebrow"><span class="dot"></span> Quantum Hybrid Systems · v4.1</span>
+            <span class="eyebrow"><span class="dot"></span> Quantum Hybrid Systems &middot; v4.1</span>
           </div>
           <h1 class="reveal delay-1">
             <span class="line">Optimization</span>
@@ -80,11 +99,11 @@
           </h1>
           <p class="lead reveal delay-2">
             ObsidianQ engineers anti-gravity quantum infrastructure and hybrid solver
-            architectures for real-world industrial intelligence — logistics, manufacturing,
+            architectures for real-world industrial intelligence &mdash; logistics, manufacturing,
             energy, and enterprise systems running at production scale.
           </p>
           <div class="hero-actions reveal delay-3">
-            <a class="btn btn-primary" href="#solver">
+            <a class="btn btn-primary glow-pulse" href="#solver">
               Explore the Solver
               <span class="arrow" aria-hidden="true">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -93,15 +112,15 @@
             <a class="btn btn-ghost" href="#research">View Research</a>
           </div>
           <div class="hero-meta reveal delay-4">
-            <div class="meta-card">
+            <div class="meta-card shimmer-border">
               <div class="num"><span data-count="4500" data-suffix="+">0</span></div>
               <div class="lbl">Hybrid Qubits</div>
             </div>
-            <div class="meta-card">
+            <div class="meta-card shimmer-border">
               <div class="num"><span data-count="98.4" data-suffix="%">0</span></div>
               <div class="lbl">Solver Uptime</div>
             </div>
-            <div class="meta-card">
+            <div class="meta-card shimmer-border">
               <div class="num"><span data-count="120" data-suffix="ms">0</span></div>
               <div class="lbl">Avg. Routing</div>
             </div>
@@ -110,7 +129,7 @@
 
         <div class="hero-panel reveal delay-2" aria-hidden="true">
           <div class="panel-header">
-            <span class="title">Quantum Solver · Live Telemetry</span>
+            <span class="title">Quantum Solver &middot; Live Telemetry</span>
             <span class="live-pill">Online</span>
           </div>
           <div class="qubit-grid"></div>
@@ -127,7 +146,7 @@
                 <svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-7"/></svg>
                 Optimization Engine
               </span>
-              <span class="val green">Converged · 12.4s</span>
+              <span class="val green">Converged &middot; 12.4s</span>
             </div>
             <div class="panel-row">
               <span class="key">
@@ -143,9 +162,22 @@
               </span>
               <span class="val violet">147 / 200</span>
             </div>
+            <div class="panel-row">
+              <span class="key">
+                <svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7v8l10-12h-7z"/></svg>
+                QPU Temperature
+              </span>
+              <span class="val cyan">15 mK</span>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator reveal delay-4">
+      <div class="scroll-line"></div>
+      <span>Scroll to explore</span>
     </div>
   </header>
 
@@ -154,16 +186,20 @@
     <div class="marquee-track">
       <span class="marquee-item">Quantum Hybrid Systems<span class="sep"></span></span>
       <span class="marquee-item">Anti-Gravity Architecture<span class="sep"></span></span>
-      <span class="marquee-item">Hybrid Solver · 4500+ qubits<span class="sep"></span></span>
+      <span class="marquee-item">Hybrid Solver &middot; 4500+ qubits<span class="sep"></span></span>
       <span class="marquee-item">Industrial Optimization<span class="sep"></span></span>
-      <span class="marquee-item">Ocean SDK · Python APIs<span class="sep"></span></span>
+      <span class="marquee-item">Ocean SDK &middot; Python APIs<span class="sep"></span></span>
       <span class="marquee-item">Cinematic Cyber Luxury<span class="sep"></span></span>
+      <span class="marquee-item">Next-Gen Compute<span class="sep"></span></span>
+      <span class="marquee-item">Anti-Gravity Infrastructure<span class="sep"></span></span>
       <span class="marquee-item">Quantum Hybrid Systems<span class="sep"></span></span>
       <span class="marquee-item">Anti-Gravity Architecture<span class="sep"></span></span>
-      <span class="marquee-item">Hybrid Solver · 4500+ qubits<span class="sep"></span></span>
+      <span class="marquee-item">Hybrid Solver &middot; 4500+ qubits<span class="sep"></span></span>
       <span class="marquee-item">Industrial Optimization<span class="sep"></span></span>
-      <span class="marquee-item">Ocean SDK · Python APIs<span class="sep"></span></span>
+      <span class="marquee-item">Ocean SDK &middot; Python APIs<span class="sep"></span></span>
       <span class="marquee-item">Cinematic Cyber Luxury<span class="sep"></span></span>
+      <span class="marquee-item">Next-Gen Compute<span class="sep"></span></span>
+      <span class="marquee-item">Anti-Gravity Infrastructure<span class="sep"></span></span>
     </div>
   </section>
 
@@ -171,10 +207,10 @@
   <section id="infrastructure">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> 01 · Quantum Infrastructure</span>
+        <span class="eyebrow"><span class="dot"></span> 01 &middot; Quantum Infrastructure</span>
         <h2>Hybrid quantum systems engineered for <span class="gradient-text">production scale.</span></h2>
         <p>
-          ObsidianQ runs on a hybrid quantum-classical stack — purpose-built QPUs, low-latency
+          ObsidianQ runs on a hybrid quantum-classical stack &mdash; purpose-built QPUs, low-latency
           accelerator meshes, and a real-time orchestration layer designed to dispatch industrial
           workloads across thousands of qubits with sub-second telemetry.
         </p>
@@ -183,36 +219,36 @@
       <div class="infra-row">
         <div class="infra-visual reveal">
           <div id="qubit-lattice" style="position:absolute;inset:0;"></div>
-          <span class="label-floating label-1">Lattice · 8³</span>
-          <span class="label-floating label-2">Coherence · T₂ 240µs</span>
-          <span class="label-floating label-3">Gates · 99.91%</span>
-          <span class="label-floating label-4">Topology · Pegasus-X</span>
+          <span class="label-floating label-1">Lattice &middot; 8&sup3;</span>
+          <span class="label-floating label-2">Coherence &middot; T&#x2082; 240&micro;s</span>
+          <span class="label-floating label-3">Gates &middot; 99.91%</span>
+          <span class="label-floating label-4">Topology &middot; Pegasus-X</span>
         </div>
 
         <div>
           <div class="grid-2" style="gap:18px;">
-            <div class="card reveal">
+            <div class="card hover-glow reveal">
               <div class="icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18"/></svg>
               </div>
               <h3>4500+ Hybrid Qubits</h3>
               <p>Dense lattice topology with high-coherence superconducting qubits, optically synchronized to a classical optimizer mesh.</p>
             </div>
-            <div class="card reveal delay-1">
+            <div class="card hover-glow reveal delay-1">
               <div class="icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
               </div>
               <h3>Hybrid Solver Mesh</h3>
               <p>QPU, GPU, and CPU compute fused into a single dispatch graph, balancing constraint structure against quantum advantage in milliseconds.</p>
             </div>
-            <div class="card reveal delay-2">
+            <div class="card hover-glow reveal delay-2">
               <div class="icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M10 6h4M10 17h4M6 10v4M17 10v4"/></svg>
               </div>
               <h3>Quantum-Classical Pipeline</h3>
               <p>Continuous problem decomposition routes structured sub-problems to the QPU and the rest to high-throughput classical accelerators.</p>
             </div>
-            <div class="card reveal delay-3">
+            <div class="card hover-glow reveal delay-3">
               <div class="icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M21 9l-6 4-3-2-6 4"/></svg>
               </div>
@@ -229,52 +265,94 @@
   <section id="logistics">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> 02 · Logistics &amp; Optimization</span>
+        <span class="eyebrow"><span class="dot"></span> 02 &middot; Logistics &amp; Optimization</span>
         <h2>Smart supply chains, <span class="gradient-text">solved in real time.</span></h2>
         <p>
           From multi-vehicle routing to dynamic warehouse layouts, ObsidianQ runs continuous
-          re-optimization loops that adapt to traffic, demand, and energy availability — turning
+          re-optimization loops that adapt to traffic, demand, and energy availability &mdash; turning
           minutes-old plans into second-by-second decisions.
         </p>
       </div>
 
+      <!-- Logistics live dashboard -->
+      <div class="logistics-dashboard reveal" style="margin-bottom:40px;">
+        <div class="dashboard-header">
+          <span class="title">Supply Chain Command Center</span>
+          <span class="live-pill">Live</span>
+        </div>
+        <div class="dashboard-grid">
+          <div class="dash-stat">
+            <div class="dash-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11l3 3h4v6h-2a2 2 0 11-4 0H10a2 2 0 11-4 0H3z"/><circle cx="8" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            </div>
+            <div class="dash-val"><span data-count="2847" data-suffix="">0</span></div>
+            <div class="dash-lbl">Active Vehicles</div>
+            <div class="dash-trend up">+12.4%</div>
+          </div>
+          <div class="dash-stat">
+            <div class="dash-icon violet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="14"/><path d="M3 10h18M7 14h2M11 14h2M15 14h2"/></svg>
+            </div>
+            <div class="dash-val"><span data-count="186" data-suffix="K">0</span></div>
+            <div class="dash-lbl">Packages/Hour</div>
+            <div class="dash-trend up">+8.7%</div>
+          </div>
+          <div class="dash-stat">
+            <div class="dash-icon cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <div class="dash-val"><span data-count="99.2" data-suffix="%">0</span></div>
+            <div class="dash-lbl">SLA Compliance</div>
+            <div class="dash-trend up">+0.3%</div>
+          </div>
+          <div class="dash-stat">
+            <div class="dash-icon green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7v8l10-12h-7z"/></svg>
+            </div>
+            <div class="dash-val"><span data-count="4.18" data-suffix="t">0</span></div>
+            <div class="dash-lbl">CO&#x2082; Saved Today</div>
+            <div class="dash-trend up">+22.1%</div>
+          </div>
+        </div>
+      </div>
+
       <div class="grid-3">
-        <div class="card feature reveal">
+        <div class="card feature hover-glow reveal">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11l3 3h4v6h-2a2 2 0 11-4 0H10a2 2 0 11-4 0H3z"/><circle cx="8" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
           </div>
           <h3>Multi-Vehicle Routing</h3>
           <p>Capacity-aware, time-windowed routing across thousands of vehicles with live traffic, charging, and SLA constraints baked in.</p>
         </div>
-        <div class="card feature reveal delay-1">
+        <div class="card feature hover-glow reveal delay-1">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="14"/><path d="M3 10h18M7 14h2M11 14h2M15 14h2"/></svg>
           </div>
           <h3>Warehouse Optimization</h3>
-          <p>Slot allocation, pick paths, and cross-dock orchestration solved as a unified hybrid program — yields 18-32% throughput uplift.</p>
+          <p>Slot allocation, pick paths, and cross-dock orchestration solved as a unified hybrid program &mdash; yields 18-32% throughput uplift.</p>
         </div>
-        <div class="card feature reveal delay-2">
+        <div class="card feature hover-glow reveal delay-2">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="3"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M14 21v-2a4 4 0 014-4h0"/></svg>
           </div>
           <h3>Workforce Scheduling</h3>
           <p>Constraint-rich shift planning with skills, fatigue, fairness, and labor regulations modeled as quantum-friendly soft constraints.</p>
         </div>
-        <div class="card feature reveal delay-1">
+        <div class="card feature hover-glow reveal delay-1">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17h18M5 17V7a4 4 0 014-4h6a4 4 0 014 4v10"/><path d="M9 21v-4M15 21v-4"/></svg>
           </div>
           <h3>Dynamic Traffic &amp; EV Fleet</h3>
           <p>Live adaptive control of EV charging, depot rotation, and high-density traffic networks across smart city environments.</p>
         </div>
-        <div class="card feature reveal delay-2">
+        <div class="card feature hover-glow reveal delay-2">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
           </div>
           <h3>Cross-Dock Network</h3>
-          <p>End-to-end logistics graphs with anti-gravity edge weighting — re-prioritizes shipments as constraints shift mid-route.</p>
+          <p>End-to-end logistics graphs with anti-gravity edge weighting &mdash; re-prioritizes shipments as constraints shift mid-route.</p>
         </div>
-        <div class="card feature reveal delay-3">
+        <div class="card feature hover-glow reveal delay-3">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 010 18M3 12h18"/></svg>
           </div>
@@ -289,7 +367,7 @@
   <section id="industrial">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> 03 · Industrial Production Systems</span>
+        <span class="eyebrow"><span class="dot"></span> 03 &middot; Industrial Production Systems</span>
         <h2>Manufacturing intelligence at <span class="gradient-text">factory speed.</span></h2>
         <p>
           A production-grade scheduling fabric for discrete manufacturing, process plants, and
@@ -299,33 +377,65 @@
       </div>
 
       <div class="grid-4">
-        <div class="card reveal">
+        <div class="card hover-glow reveal">
+          <div class="card-number">01</div>
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l4-12 5 5 4-9 5 16"/></svg>
           </div>
           <h3>Manufacturing Optimization</h3>
           <p>Throughput, OEE, and yield jointly optimized under hybrid quantum constraints.</p>
         </div>
-        <div class="card reveal delay-1">
+        <div class="card hover-glow reveal delay-1">
+          <div class="card-number">02</div>
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12"/><path d="M7 6V4M17 6V4M3 12h18"/></svg>
           </div>
           <h3>Production Scheduling</h3>
           <p>Continuous re-planning of orders, lines, and changeovers across regional plants.</p>
         </div>
-        <div class="card reveal delay-2">
+        <div class="card hover-glow reveal delay-2">
+          <div class="card-number">03</div>
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3"/></svg>
           </div>
           <h3>Constraint Engines</h3>
           <p>QUBO + CP-SAT hybridization for non-convex, large-scale industrial constraints.</p>
         </div>
-        <div class="card reveal delay-3">
+        <div class="card hover-glow reveal delay-3">
+          <div class="card-number">04</div>
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7v8l10-12h-7z"/></svg>
           </div>
           <h3>Energy-Efficient Compute</h3>
           <p>Quantum-class compute draws roughly the power of an industrial refrigerator.</p>
+        </div>
+      </div>
+
+      <!-- Real-time optimization scenarios -->
+      <div class="scenarios-strip reveal" style="margin-top:48px;">
+        <div class="scenario-card">
+          <div class="scenario-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-7" stroke-width="2"/></svg>
+          </div>
+          <h4>Adaptive Scheduling</h4>
+          <p>Re-optimizes production every 30 seconds based on live sensor data</p>
+          <div class="scenario-stat"><span data-count="32" data-suffix="%">0</span> throughput gain</div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-icon violet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h4>Predictive Maintenance</h4>
+          <p>Quantum-enhanced anomaly detection on vibration spectra</p>
+          <div class="scenario-stat"><span data-count="94" data-suffix="%">0</span> early detection</div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-icon cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+          <h4>Multi-Plant Sync</h4>
+          <p>Cross-facility resource balancing in real time</p>
+          <div class="scenario-stat"><span data-count="18" data-suffix="%">0</span> cost reduction</div>
         </div>
       </div>
     </div>
@@ -335,11 +445,11 @@
   <section id="solver">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> 04 · Hybrid Solver Showcase</span>
+        <span class="eyebrow"><span class="dot"></span> 04 &middot; Hybrid Solver Showcase</span>
         <h2>Non-convex landscapes, <span class="gradient-text">solved in superposition.</span></h2>
         <p>
           The ObsidianQ Hybrid Solver fuses quantum sampling with classical refinement. We
-          handle problems classical solvers cannot — in seconds, not days.
+          handle problems classical solvers cannot &mdash; in seconds, not days.
         </p>
       </div>
 
@@ -347,30 +457,71 @@
         <div class="showcase-visual reveal">
           <div id="constraint-graph" style="position:absolute;inset:0;"></div>
           <span class="label-floating label-1">Constraint Graph</span>
-          <span class="label-floating label-3">QPU · 4500q</span>
+          <span class="label-floating label-3">QPU &middot; 4500q</span>
           <span class="label-floating label-4">Hybrid Cloud</span>
         </div>
 
         <div class="kpi-grid reveal delay-1">
-          <div class="kpi">
-            <div class="num"><span data-count="240" data-suffix="×">0</span></div>
+          <div class="kpi shimmer-border">
+            <div class="num"><span data-count="240" data-suffix="&times;">0</span></div>
             <div class="lbl">Speedup vs. classical</div>
             <p>Average uplift on industrial routing benchmarks against best-in-class classical heuristics.</p>
           </div>
-          <div class="kpi">
+          <div class="kpi shimmer-border">
             <div class="num"><span data-count="99.91" data-suffix="%">0</span></div>
             <div class="lbl">Gate fidelity</div>
             <p>Two-qubit gate fidelity sustained across the production lattice topology.</p>
           </div>
-          <div class="kpi">
+          <div class="kpi shimmer-border">
             <div class="num"><span data-count="12.4" data-suffix="s">0</span></div>
             <div class="lbl">Median time-to-solution</div>
             <p>For 50k-variable, mixed-integer non-convex industrial workloads.</p>
           </div>
-          <div class="kpi">
+          <div class="kpi shimmer-border">
             <div class="num"><span data-count="50000" data-suffix="">0</span></div>
             <div class="lbl">Variables / problem</div>
             <p>Scalable solver dispatch with online problem decomposition and reduction.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solver Architecture Diagram -->
+      <div class="solver-arch reveal" style="margin-top:48px;">
+        <h3 class="arch-title">Hybrid Cloud Orchestration Architecture</h3>
+        <div class="arch-flow">
+          <div class="arch-node">
+            <div class="arch-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+            </div>
+            <span>Problem Input</span>
+          </div>
+          <div class="arch-arrow"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 1l6 5-6 5" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          <div class="arch-node active">
+            <div class="arch-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg>
+            </div>
+            <span>Decomposer</span>
+          </div>
+          <div class="arch-arrow"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 1l6 5-6 5" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          <div class="arch-node qpu">
+            <div class="arch-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg>
+            </div>
+            <span>QPU Sampler</span>
+          </div>
+          <div class="arch-arrow"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 1l6 5-6 5" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          <div class="arch-node active">
+            <div class="arch-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-7"/></svg>
+            </div>
+            <span>Refinement</span>
+          </div>
+          <div class="arch-arrow"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 1l6 5-6 5" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          <div class="arch-node">
+            <div class="arch-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            </div>
+            <span>Solution</span>
           </div>
         </div>
       </div>
@@ -381,7 +532,7 @@
   <section id="pipeline">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> 05 · Technology Pipeline</span>
+        <span class="eyebrow"><span class="dot"></span> 05 &middot; Technology Pipeline</span>
         <h2>From discovery to <span class="gradient-text">production scale.</span></h2>
         <p>A linear, auditable journey from quantum proof-of-technology to enterprise-grade deployment, designed for industrial leadership teams.</p>
       </div>
@@ -391,26 +542,31 @@
           <div class="step-num">01 / DISCOVERY</div>
           <h4>Problem Modeling</h4>
           <p>Map the industrial constraint landscape into a quantum-friendly Hamiltonian.</p>
+          <div class="step-progress"><div class="step-fill" style="width:100%"></div></div>
         </div>
         <div class="pipeline-step reveal delay-1">
           <div class="step-num">02 / POT</div>
           <h4>Proof of Technology</h4>
           <p>Validate quantum advantage on a representative sub-problem.</p>
+          <div class="step-progress"><div class="step-fill" style="width:100%"></div></div>
         </div>
         <div class="pipeline-step reveal delay-2">
           <div class="step-num">03 / DEV</div>
           <h4>Iterative Development</h4>
           <p>Co-engineer the hybrid solver with your domain experts and SLAs.</p>
+          <div class="step-progress"><div class="step-fill" style="width:85%"></div></div>
         </div>
         <div class="pipeline-step reveal delay-3">
           <div class="step-num">04 / PILOT</div>
           <h4>Pilot Deployment</h4>
           <p>Live A/B against incumbent classical baselines in a sandboxed environment.</p>
+          <div class="step-progress"><div class="step-fill" style="width:60%"></div></div>
         </div>
         <div class="pipeline-step reveal delay-4">
           <div class="step-num">05 / SCALE</div>
           <h4>Production Scale</h4>
           <p>Roll out across regions with 24/7 SRE coverage and quantum-cloud failover.</p>
+          <div class="step-progress"><div class="step-fill" style="width:35%"></div></div>
         </div>
         <div class="pipeline-line"></div>
       </div>
@@ -421,7 +577,7 @@
   <section id="sustainability">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> 06 · Sustainability &amp; Energy Efficiency</span>
+        <span class="eyebrow"><span class="dot"></span> 06 &middot; Sustainability &amp; Energy Efficiency</span>
         <h2>Quantum compute at <span class="gradient-text">refrigerator-level energy.</span></h2>
         <p>Compute density without the carbon footprint. ObsidianQ data centers operate on a green-by-default architecture with closed-loop cooling and grid-aware scheduling.</p>
       </div>
@@ -451,25 +607,37 @@
         </div>
 
         <div class="reveal delay-1">
-          <div class="card" style="padding:34px;">
+          <div class="card hover-glow" style="padding:34px;">
             <div class="icon" style="background:linear-gradient(135deg, rgba(110,230,130,0.18), rgba(76,201,255,0.18)); border-color:rgba(110,230,130,0.3); color:#aef0a0;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C7 7 4 11 4 15a8 8 0 0016 0c0-4-3-8-8-13z"/></svg>
             </div>
             <h3>Green Quantum Infrastructure</h3>
             <p>
               Cryogenic systems, photonic links, and superconducting electronics combine to
-              deliver compute densities classical exascale facilities cannot match —
+              deliver compute densities classical exascale facilities cannot match &mdash;
               while drawing roughly the energy of a domestic refrigerator per QPU.
             </p>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
-              <div class="meta-card">
+              <div class="meta-card shimmer-border">
                 <div class="num"><span data-count="25" data-suffix="kW">0</span></div>
                 <div class="lbl">Avg. power per QPU</div>
               </div>
-              <div class="meta-card">
+              <div class="meta-card shimmer-border">
                 <div class="num"><span data-count="1.06" data-suffix="">0</span></div>
                 <div class="lbl">PUE</div>
               </div>
+            </div>
+          </div>
+
+          <!-- Sustainable data centers -->
+          <div class="green-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
+            <div class="card hover-glow compact reveal delay-2">
+              <h3>Efficient Data Centers</h3>
+              <p>Closed-loop liquid nitrogen cooling with zero water consumption.</p>
+            </div>
+            <div class="card hover-glow compact reveal delay-3">
+              <h3>Sustainable AI Compute</h3>
+              <p>Grid-aware workload migration reduces peak demand by 40%.</p>
             </div>
           </div>
         </div>
@@ -481,7 +649,7 @@
   <section id="research">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span> 07 · Research &amp; Open Source</span>
+        <span class="eyebrow"><span class="dot"></span> 07 &middot; Research &amp; Open Source</span>
         <h2>An open developer ecosystem for <span class="gradient-text">hybrid quantum.</span></h2>
         <p>Use familiar Python tooling, our Ocean-inspired SDK, and high-level quantum workflow APIs to ship optimization workloads to the ObsidianQ cloud in a single import.</p>
       </div>
@@ -491,9 +659,9 @@
           <div class="code-card">
             <div class="code-head">
               <div class="dots"><span></span><span></span><span></span></div>
-              <span class="file">routing.py · ObsidianQ SDK</span>
+              <span class="file">routing.py &middot; ObsidianQ SDK</span>
             </div>
-<pre class="code-body"><span class="c"># Hybrid quantum routing — 4500-qubit dispatch</span>
+<pre class="code-body"><span class="c"># Hybrid quantum routing &mdash; 4500-qubit dispatch</span>
 <span class="k">from</span> obsidianq <span class="k">import</span> HybridSolver, Problem
 <span class="k">from</span> obsidianq.industrial <span class="k">import</span> RoutingModel
 
@@ -510,32 +678,51 @@ result  <span class="k">=</span> solver.<span class="f">solve</span>(model, time
 
 <span class="k">print</span>(result.kpis)   <span class="c"># &gt; {"distance": 18421.2, "co2": 4.18t, "sla": 1.0}</span></pre>
           </div>
+
+          <!-- Second code card -->
+          <div class="code-card" style="margin-top:18px;">
+            <div class="code-head">
+              <div class="dots"><span></span><span></span><span></span></div>
+              <span class="file">quantum_workflow.py &middot; Orchestration</span>
+            </div>
+<pre class="code-body"><span class="c"># Multi-step quantum workflow pipeline</span>
+<span class="k">from</span> obsidianq.workflow <span class="k">import</span> Pipeline, Step
+
+pipeline <span class="k">=</span> Pipeline(<span class="s">"production_opt"</span>)
+pipeline.add(Step.decompose(strategy<span class="k">=</span><span class="s">"auto"</span>))
+pipeline.add(Step.sample(qpu<span class="k">=</span><span class="s">"pegasus-4500"</span>))
+pipeline.add(Step.refine(method<span class="k">=</span><span class="s">"tabu"</span>))
+pipeline.add(Step.validate(threshold<span class="k">=</span><span class="n">0.95</span>))
+
+result <span class="k">=</span> pipeline.<span class="f">run</span>(problem, async_mode<span class="k">=</span><span class="n">True</span>)
+<span class="k">print</span>(result.status)  <span class="c"># &gt; "converged"</span></pre>
+          </div>
         </div>
 
         <div>
           <div class="grid-2" style="gap:18px;">
-            <div class="card reveal delay-1">
+            <div class="card hover-glow reveal delay-1">
               <div class="icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4 1-4-2-6-2m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 00-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
               </div>
               <h3>GitHub Integration</h3>
               <p>Open SDKs, examples, and reference workflows. Contribute via signed pull-requests.</p>
             </div>
-            <div class="card reveal delay-2">
+            <div class="card hover-glow reveal delay-2">
               <div class="icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12c5-8 15-8 20 0-5 8-15 8-20 0z"/><circle cx="12" cy="12" r="3"/></svg>
               </div>
               <h3>Ocean-Inspired SDK</h3>
               <p>High-level abstractions for binary, integer, and constraint-rich industrial models.</p>
             </div>
-            <div class="card reveal delay-3">
+            <div class="card hover-glow reveal delay-3">
               <div class="icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
               </div>
               <h3>Python Optimization APIs</h3>
               <p>Idiomatic Python, type-safe, with first-class async dispatch into the quantum cloud.</p>
             </div>
-            <div class="card reveal delay-4">
+            <div class="card hover-glow reveal delay-4">
               <div class="icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M6 9v3a3 3 0 003 3h6a3 3 0 003-3V9"/></svg>
               </div>
@@ -568,14 +755,26 @@ result  <span class="k">=</span> solver.<span class="f">solve</span>(model, time
   <section id="contact">
     <div class="container">
       <div class="cta reveal">
-        <span class="eyebrow"><span class="dot"></span> 08 · Future Vision</span>
+        <div class="cta-particles" aria-hidden="true"></div>
+        <span class="eyebrow"><span class="dot"></span> 08 &middot; Future Vision</span>
         <h2 style="margin-top:18px;">Quantum is <span class="gradient-text">Production Ready.</span></h2>
         <p>
-          Engineering the future of intelligent optimization — where quantum technology
+          Engineering the future of intelligent optimization &mdash; where quantum technology
           meets enterprise reality. Partner with ObsidianQ to deploy hybrid quantum
           systems across logistics, manufacturing, and industrial intelligence at scale.
         </p>
-        <a class="btn btn-primary" href="mailto:hello@obsidianq.systems">
+
+        <!-- Taglines -->
+        <div class="tagline-carousel" style="margin-bottom:32px;">
+          <div class="tagline active">"Optimization Beyond Classical Limits"</div>
+          <div class="tagline">"Quantum Intelligence for Real-World Systems"</div>
+          <div class="tagline">"Hybrid Quantum Infrastructure for Industrial Scale"</div>
+          <div class="tagline">"Engineering the Future of Intelligent Optimization"</div>
+          <div class="tagline">"Where Quantum Technology Meets Enterprise Reality"</div>
+          <div class="tagline">"Next Generation Anti-Gravity Computational Architecture"</div>
+        </div>
+
+        <a class="btn btn-primary glow-pulse" href="mailto:hello@obsidianq.systems">
           Request Access
           <span class="arrow" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -626,7 +825,7 @@ result  <span class="k">=</span> solver.<span class="f">solve</span>(model, time
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span id="year"></span> ObsidianQ Hybrid Quantum Labs. All systems suspended.</span>
+        <span>&copy; <span id="year"></span> ObsidianQ Hybrid Quantum Labs. All systems suspended.</span>
         <span>Quantum Hybrid Optimization for Real-World Industrial Intelligence.</span>
       </div>
     </div>
