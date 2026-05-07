@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interdimensional Luxury | Beyond 2025</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- TailwindCSS 2.2.19 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Google Fonts (Orbitron + Roboto) -->
+  <link href="https://cdn.jsdelivr.net/npm/@fontsource/orbitron@3.3.1/index.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fontsource/roboto@3.3.1/index.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.5.2 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  <!-- ECharts 5.4.2 (for visualisation if needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+  <style>
+    html, body {
+      scroll-behavior: smooth;
+      font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #051023 0%, #0e2234 100%);
+      color: #e0eaff;
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    /* Neon glow effect */
+    .neon {
+      text-shadow: 0 0 10px #49eaff, 0 0 20px #057aff, 0 0 30px #49eaff;
+    }
+    .neon-pink {
+      text-shadow: 0 0 10px #ff49c4, 0 0 20px #ff1493, 0 0 30px #ff49c4;
+    }
+    .neon-green {
+      text-shadow: 0 0 10px #aaff57, 0 0 20px #5fff49, 0 0 30px #aaff57;
+    }
+    /* 3D Transform effect for cards */
+    .luxury-card {
+      transition: transform 0.25s cubic-bezier(.22,1,.36,1), box-shadow 0.3s;
+      will-change: transform;
+    }
+    .luxury-card:hover {
+      transform: perspective(700px) rotateY(7deg) scale(1.04);
+      box-shadow: 0 8px 40px 8px #0d24f4aa, 0 0 12px 3px #41efdda0;
+      z-index: 2;
+    }
+    /* Hide all scrollbars for cleaner PDF export */
+    ::-webkit-scrollbar {
+      width: 0 !important;
+      background: transparent;
+    }
+    /* Particle Canvas Styling */
+    #particle-canvas {
+      position: fixed;
+      z-index: 0;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+    /* Parallax Section Background */
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    /* Language Selector (dropdown) */
+    .lang-selector select {
+      background: #202b3c;
+      border: none;
+      padding: 0.25rem 1rem;
+      color: #fff;
+      border-radius: 0.25rem;
+      font-size: 1em;
+    }
+    /* For PDF: always readable text, accent borders only on screen */
+    @media print {
+      .neon, .neon-pink, .neon-green { text-shadow: none !important; }
+      #particle-canvas, .parallax { display: none !important; }
+      header, footer { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 relative">
+
+  <!-- PARTICLE BACKGROUND -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- HEADER with Internationalization -->
+  <header class="z-10 relative pt-8 pb-6 text-center">
+    <div class="flex md:justify-end justify-center px-6 lang-selector mb-4">
+      <label for="locale" class="sr-only">Select Language</label>
+      <select id="locale" class="shadow-lg">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <option value="zh">中文</option>
+        <option value="ar">العربية</option>
+        <option value="ru">Русский</option>
+        <option value="hi">हिन्दी</option>
+        <option value="ja">日本語</option>
+        <option value="pt">Português</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </div>
+    <h1 class="text-4xl md:text-6xl font-extrabold neon tracking-widest uppercase">
+      <i class="fas fa-infinity"></i> Interdimensional Luxury <span class="neon-pink">&</span> Beyond <span class="text-blue-400">2025</span>
+    </h1>
+    <p class="mt-5 max-w-2xl mx-auto text-lg neon-green">
+      <span data-t="slogan">
+        Experience luxury travel, exclusive experiences, and stunning products <br class="hidden sm:block"> in a universe that transcends dimensions.
+      </span>
+    </p>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 py-8">
+
+    <!-- LUXURY INTERDIMENSIONAL TRAVEL -->
+    <section id="travel" class="parallax rounded-3xl p-8 mb-12 shadow-xl" style="background-image: linear-gradient(110deg, #0f2027b8 50%, #4268dab8 100%), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=900&q=80');">
+      <h2 class="text-3xl font-bold neon mb-4 flex items-center space-x-3">
+        <i class="fas fa-rocket"></i>
+        <span data-t="travel">Luxury Interdimensional Travel</span>
+      </h2>
+      <div class="grid md:grid-cols-3 grid-cols-1 gap-8 mt-8">
+        <div class="luxury-card bg-gray-800 bg-opacity-80 rounded-xl p-6 neon shadow-xl border-t-4 border-blue-500">
+          <h3 class="text-xl font-semibold mb-2 neon-pink" data-t="stellar-cruise">Stellar Cruises</h3>
+          <p class="text-base mb-4" data-t="stellar-cruise-desc">
+            Board the Infinite Pearl and glide through hyperdimensional currents. All suites, AI butlers, panoramic galactic domes.
+          </p>
+          <ul class="text-sm list-inside list-disc text-blue-200 space-y-1">
+            <li data-t="cruise-1">Personal wormhole portals</li>
+            <li data-t="cruise-2">Pan-universal gastronomy</li>
+            <li data-t="cruise-3">Quantum spa experiences</li>
+          </ul>
+        </div>
+        <div class="luxury-card bg-gray-800 bg-opacity-80 rounded-xl p-6 neon shadow-xl border-t-4 border-pink-500">
+          <h3 class="text-xl font-semibold mb-2 neon-green" data-t="planetary-lodges">Planetary Lodges</h3>
+          <p class="text-base mb-4" data-t="planetary-lodges-desc">
+            Stay in luxury domes on majestic exoplanets—invisible forcefields, anti-gravity beds, and biometric ambience.
+          </p>
+          <ul class="text-sm list-inside list-disc text-pink-200 space-y-1">
+            <li data-t="lodge-1">Holo-views of 12 galaxies</li>
+            <li data-t="lodge-2">Personal AI navigators</li>
+            <li data-t="lodge-3">Nebula thermal springs</li>
+          </ul>
+        </div>
+        <div class="luxury-card bg-gray-800 bg-opacity-80 rounded-xl p-6 neon shadow-xl border-t-4 border-green-400">
+          <h3 class="text-xl font-semibold mb-2 neon" data-t="quantum-gateways">Quantum Gateways</h3>
+          <p class="text-base mb-4" data-t="quantum-gateways-desc">
+            Instantly traverse realities via private quantum gateways—no lines, no passport needed, only pure wonder.
+          </p>
+          <ul class="text-sm list-inside list-disc text-green-200 space-y-1">
+            <li data-t="gateway-1">Zero-point acceleration</li>
+            <li data-t="gateway-2">Curated dimensional guided tours</li>
+            <li data-t="gateway-3">Custom destination design</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXCLUSIVE EXPERIENCES -->
+    <section id="experiences" class="rounded-3xl p-8 mb-12 bg-gradient-to-br from-gray-900 to-blue-900 shadow-xl">
+      <h2 class="text-3xl font-bold neon mb-4 flex items-center space-x-2">
+        <i class="fas fa-bolt"></i>
+        <span data-t="experiences">Exclusive Experiences</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div class="luxury-card bg-gray-900 bg-opacity-90 rounded-xl p-6 neon-green shadow-lg border-l-4 border-blue-400">
+          <h3 class="text-lg font-semibold mb-2" data-t="time-tasting">Time-Tasting Dinners</h3>
+          <p class="text-base mb-2" data-t="time-tasting-desc">
+            Dine on temporally aged cuisine while viewing events from alternate timelines.
+          </p>
+          <span class="uppercase tracking-widest text-sm text-blue-300 font-normal" data-t="experience-detail1">Quantum Sommelier included</span>
+        </div>
+        <div class="luxury-card bg-gray-900 bg-opacity-90 rounded-xl p-6 neon-pink shadow-lg border-l-4 border-pink-400">
+          <h3 class="text-lg font-semibold mb-2" data-t="gravity-ballet">Zero Gravity Ballet</h3>
+          <p class="text-base mb-2" data-t="gravity-ballet-desc">
+            Enjoy ballet performed by interdimensional artists in zero gravity amphitheatres.
+          </p>
+          <span class="uppercase tracking-widest text-sm text-pink-300 font-normal" data-t="experience-detail2">VIP holographic seating</span>
+        </div>
+        <div class="luxury-card bg-gray-900 bg-opacity-90 rounded-xl p-6 neon shadow-lg border-l-4 border-green-300">
+          <h3 class="text-lg font-semibold mb-2" data-t="starrelax">Stargazer’s Relaxarium</h3>
+          <p class="text-base mb-2" data-t="starrelax-desc">
+            Meditate in crystalline chambers beneath interdimensional auroras and harmonic soundscapes.
+          </p>
+          <span class="uppercase tracking-widest text-sm text-green-300 font-normal" data-t="experience-detail3">Guided by AI Mindfulness Curator</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUTURISTIC PRODUCTS (with ECharts Demo) -->
+    <section id="products" class="rounded-3xl p-8 bg-gray-900 bg-opacity-95 mb-12 shadow-2xl">
+      <h2 class="text-3xl font-bold neon mb-4 flex items-center space-x-2">
+        <i class="fas fa-gem"></i>
+        <span data-t="products">Futuristic Luxury Products</span>
+      </h2>
+      <div class="md:flex md:space-x-8">
+        <div class="flex-1 grid grid-cols-1 gap-8 my-4 md:my-0">
+          <div class="luxury-card bg-gray-800 rounded-xl p-5 shadow-lg neon-green border-r-4 border-blue-300">
+            <h3 class="font-medium text-lg mb-2" data-t="product-portal">Personal Dimensional Portal</h3>
+            <p class="text-sm mb-3" data-t="product-portal-desc">
+              Step through your own designer portal—secure, stylish, and integrated with all your realities.
+            </p>
+            <span class="text-blue-200" data-t="product-feature1">Fully AI-customizable</span>
+          </div>
+          <div class="luxury-card bg-gray-800 rounded-xl p-5 shadow-lg neon-pink border-r-4 border-pink-300">
+            <h3 class="font-medium text-lg mb-2" data-t="product-timewear">Chrono Wearables</h3>
+            <p class="text-sm mb-3" data-t="product-timewear-desc">
+              Holographic, multi-timezone wearables. Connects to any you in the multiverse—now with emotion synthesis.
+            </p>
+            <span class="text-pink-200" data-t="product-feature2">Bio-adaptive interface</span>
+          </div>
+          <div class="luxury-card bg-gray-800 rounded-xl p-5 shadow-lg neon border-r-4 border-green-300">
+            <h3 class="font-medium text-lg mb-2" data-t="product-art">Quantum Artifacts</h3>
+            <p class="text-sm mb-3" data-t="product-art-desc">
+              Hand-forged by trans-dimensional artists, each artifact warps color, sound, and thought—a living masterpiece.
+            </p>
+            <span class="text-green-200" data-t="product-feature3">Certificate of Quantum Authenticity</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col items-center justify-center p-4">
+          <div class="w-full max-w-xs mx-auto">
+            <h4 class="text-neon text-lg mb-2 text-blue-300 font-medium" data-t="stats">Luxury Market Reach (2030, in dimensions)</h4>
+            <div id="luxury-chart" style="height:250px;width:100%;background:rgba(16,30,60,0.5);border-radius:1rem"></div>
+          </div>
+          <div class="mt-4">
+            <a href="https://github.com/" target="_blank" class="inline-flex items-center px-5 py-2 bg-blue-700 hover:bg-blue-600 rounded-full text-white text-sm uppercase shadow-lg transition">
+              <i class="fab fa-github mr-2"></i> GitHub
+            </a>
+            <a href="https://www.netlify.com/" target="_blank" class="inline-flex items-center px-5 py-2 bg-green-600 hover:bg-green-500 rounded-full text-white text-sm uppercase shadow-lg transition ml-3">
+              <i class="fas fa-cloud mr-2"></i> Netlify
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUTURISTIC 3D-STYLE VISUAL/VIDEO DEMO -->
+    <section class="rounded-3xl p-8 mb-8 bg-gradient-to-br from-blue-900 to-indigo-900 shadow-2xl flex flex-col items-center justify-center space-y-6">
+      <h2 class="text-2xl md:text-3xl neon-pink font-bold mb-3 flex items-center">
+        <i class="fas fa-vr-cardboard mr-2"></i>
+        <span data-t="vision">Vision of Interdimensional Luxury</span>
+      </h2>
+      <!-- 3D video or animation as a placeholder -->
+      <video controls playsinline webkit-playsinline class="mx-auto rounded-xl shadow-lg w-full max-w-2xl border-4 border-blue-500">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="mt-3 text-base text-center max-w-2xl mx-auto" data-t="video-desc">
+        See how future travelers and connoisseurs enjoy interdimensional environments, in a blend of technology and ultimate comfort.
+      </p>
+    </section>
+  </main>
+
+  <footer class="relative z-10 py-8 text-center text-blue-300 mt-12 border-t border-blue-700 bg-gradient-to-r from-gray-900 via-transparent to-gray-900">
+    <div>
+      <span class="uppercase font-bold neon-pink">&infin;</span>
+      <span class="text-xs" data-t="footer-txt">Interdimensional Luxury 2025. All dimensions reserved.</span>
+    </div>
+    <nav class="space-x-5 mt-2">
+      <a href="#travel" class="hover:underline neon-blue" data-t="nav-travel">Travel</a>
+      <a href="#experiences" class="hover:underline neon-pink" data-t="nav-experiences">Experiences</a>
+      <a href="#products" class="hover:underline neon-green" data-t="nav-products">Products</a>
+    </nav>
+  </footer>
+
+  <!-- Particle Effect Script -->
+  <script>
+    const canvas=document.getElementById('particle-canvas'),ctx=canvas.getContext('2d');
+    function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+    window.addEventListener('resize',resizeCanvas);resizeCanvas();
+    const particles=Array.from({length:90},()=>({
+      x:Math.random()*canvas.width,
+      y:Math.random()*canvas.height,
+      r:Math.random()*2.5+1.5,
+      vx:(Math.random()-0.5)*0.8,
+      vy:(Math.random()-0.5)*0.8,
+      color:['#49eaff','#ff5ac5','#7dff54','#12fff7','#727eff'][Math.floor(Math.random()*5)]
+    }));
+    function drawParticles(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(let p of particles){
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,2*Math.PI);
+        ctx.fillStyle=p.color+'88';
+        ctx.shadowColor=p.color;
+        ctx.shadowBlur=16;
+        ctx.fill();
+        ctx.shadowBlur=0;
+        // Draw subtle glow lines to neighbors
+        for(const q of particles){
+          if(p!==q&&(Math.abs(p.x-q.x)<90&&Math.abs(p.y-q.y)<70))
+          {
+            ctx.beginPath();
+            ctx.moveTo(p.x,p.y);
+            ctx.lineTo(q.x,q.y);
+            ctx.strokeStyle=p.color+'22';
+            ctx.lineWidth=1+(2-Math.max(Math.abs(p.x-q.x)/80,Math.abs(p.y-q.y)/60));
+            ctx.stroke();
+          }
+        }
+        p.x+=p.vx;p.y+=p.vy;
+        if(p.x<0||p.x>canvas.width)p.vx*=-1;
+        if(p.y<0||p.y>canvas.height)p.vy*=-1;
+      }
+      requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+  </script>
+  <!-- ECharts Demo Chart: Multiverse Market Reach -->
+  <script>
+    var chartDom = document.getElementById('luxury-chart');
+    var myChart = echarts.init(chartDom);
+    var option = {
+      tooltip: { trigger: 'item', backgroundColor:'#273148ee',borderColor:'#49eaff' },
+      radar: {
+        indicator: [
+          { name: 'Terra', max: 600 },
+          { name: 'Andromeda', max: 600 },
+          { name: 'Orion', max: 600 },
+          { name: 'Cygnus', max: 600 },
+          { name: 'Zentauri', max: 600 },
+          { name: 'Elysium', max: 600 }
+        ],
+        axisName: {
+          color: '#49eaff',
+          fontFamily: 'Orbitron',
+          fontWeight: 'bolder',
+        },
+        axisLine: { lineStyle: { color: '#24477a' } },
+        splitLine: { lineStyle: { color: '#5551', type: 'dashed' } },
+        splitArea: { areaStyle: { color: ['#13274388','#2c3b5588'] } }
+      },
+      series: [{
+        name: 'Market Coverage',
+        type: 'radar',
+        data: [
+          {
+            value: [570, 450, 380, 390, 420, 290],
+            name: '2025',
+            lineStyle: { color:'#49eaff',width:3 },
+            areaStyle: { color:'#49eaff33' },
+            symbol:'circle',
+            symbolSize: 8,
+            itemStyle: { color:'#49eaff', borderColor:'#fff', borderWidth:1 }
+          }
+        ]
+      }]
+    };
+    myChart.setOption(option);
+    window.addEventListener("resize", ()=>{myChart.resize();});
+  </script>
+  <!-- Internationalization (main UI text in multiple languages) -->
+  <script>
+    const translations = {
+      en: {
+        slogan: 'Experience luxury travel, exclusive experiences, and stunning products <br class="hidden sm:block"> in a universe that transcends dimensions.',
+        travel: 'Luxury Interdimensional Travel',
+        'stellar-cruise': 'Stellar Cruises',
+        'stellar-cruise-desc': 'Board the Infinite Pearl and glide through hyperdimensional currents. All suites, AI butlers, panoramic galactic domes.',
+        'cruise-1': 'Personal wormhole portals',
+        'cruise-2': 'Pan-universal gastronomy',
+        'cruise-3': 'Quantum spa experiences',
+        'planetary-lodges': 'Planetary Lodges',
+        'planetary-lodges-desc': 'Stay in luxury domes on majestic exoplanets—invisible forcefields, anti-gravity beds, and biometric ambience.',
+        'lodge-1': 'Holo-views of 12 galaxies',
+        'lodge-2': 'Personal AI navigators',
+        'lodge-3': 'Nebula thermal springs',
+        'quantum-gateways': 'Quantum Gateways',
+        'quantum-gateways-desc': 'Instantly traverse realities via private quantum gateways—no lines, no passport needed, only pure wonder.',
+        'gateway-1': 'Zero-point acceleration',
+        'gateway-2': 'Curated dimensional guided tours',
+        'gateway-3': 'Custom destination design',
+        experiences: 'Exclusive Experiences',
+        'time-tasting': 'Time-Tasting Dinners',
+        'time-tasting-desc': 'Dine on temporally aged cuisine while viewing events from alternate timelines.',
+        'experience-detail1': 'Quantum Sommelier included',
+        'gravity-ballet': 'Zero Gravity Ballet',
+        'gravity-ballet-desc': 'Enjoy ballet performed by interdimensional artists in zero gravity amphitheatres.',
+        'experience-detail2': 'VIP holographic seating',
+        'starrelax': 'Stargazer’s Relaxarium',
+        'starrelax-desc': 'Meditate in crystalline chambers beneath interdimensional auroras and harmonic soundscapes.',
+        'experience-detail3': 'Guided by AI Mindfulness Curator',
+        products: 'Futuristic Luxury Products',
+        'product-portal': 'Personal Dimensional Portal',
+        'product-portal-desc': 'Step through your own designer portal—secure, stylish, and integrated with all your realities.',
+        'product-feature1': 'Fully AI-customizable',
+        'product-timewear': 'Chrono Wearables',
+        'product-timewear-desc': 'Holographic, multi-timezone wearables. Connects to any you in the multiverse—now with emotion synthesis.',
+        'product-feature2': 'Bio-adaptive interface',
+        'product-art': 'Quantum Artifacts',
+        'product-art-desc': 'Hand-forged by trans-dimensional artists, each artifact warps color, sound, and thought—a living masterpiece.',
+        'product-feature3': 'Certificate of Quantum Authenticity',
+        stats: 'Luxury Market Reach (2030, in dimensions)',
+        vision: 'Vision of Interdimensional Luxury',
+        'video-desc': 'See how future travelers and connoisseurs enjoy interdimensional environments, in a blend of technology and ultimate comfort.',
+        'footer-txt': 'Interdimensional Luxury 2025. All dimensions reserved.',
+        'nav-travel': 'Travel',
+        'nav-experiences': 'Experiences',
+        'nav-products': 'Products',
+      },
+      fr: {
+        slogan: "Vivez le voyage de luxe, des expériences exclusives et des produits époustouflants<br> dans un univers qui transcende les dimensions.",
+        travel: "Voyage Interdimensionnel de Luxe",
+        'stellar-cruise': "Croisières Stellaires",
+        'stellar-cruise-desc': "Embarquez sur l'Infinite Pearl et glissez à travers les courants hyperdimensionnels. Suites, majordomes IA, dômes galactiques panoramiques.",
+        'cruise-1': "Portails de trous de ver personnels",
+        'cruise-2': "Gastronomie pan-universelle",
+        'cruise-3': "Spas quantiques",
+        'planetary-lodges': "Lodges Planétaires",
+        'planetary-lodges-desc': "Séjournez dans des dômes de luxe sur des exoplanètes majestueuses : champs de force invisibles, lits antigravité, ambiance biométrique.",
+        'lodge-1': "Vues holo de 12 galaxies",
+        'lodge-2': "Navigateurs IA personnels",
+        'lodge-3': "Sources thermales de nébuleuses",
+        'quantum-gateways': "Portails Quantiques",
+        'quantum-gateways-desc': "Traversez les réalités via des portails quantiques privés—pas de file d'attente, pas de passeport, seulement l'émerveillement.",
+        'gateway-1': "Accélération point zéro",
+        'gateway-2': "Visites guidées dimensionnelles",
+        'gateway-3': "Conception de destination personnalisée",
+        experiences: "Expériences Exclusives",
+        'time-tasting': "Dîners de Dégustation Temporelle",
+        'time-tasting-desc': "Dégustez une cuisine vieillie temporellement tout en admirant des événements d'autres timelines.",
+        'experience-detail1': "Sommelier Quantique inclus",
+        'gravity-ballet': "Ballet en Apesanteur",
+        'gravity-ballet-desc': "Assistez à un ballet d’artistes interdimensionnels dans des amphithéâtres en apesanteur.",
+        'experience-detail2': "Places holographiques VIP",
+        'starrelax': "Relaxarium Stargazer",
+        'starrelax-desc': "Méditez dans des chambres cristallines sous des aurores interdimensionnelles et des paysages sonores harmoniques.",
+        'experience-detail3': "Guidé par l’IA Méditation",
+        products: "Produits de Luxe Futuristes",
+        'product-portal': "Portail Dimensionnel Personnel",
+        'product-portal-desc': "Traversez votre propre portail de créateur—sûr, élégant et intégré à toutes vos réalités.",
+        'product-feature1': "Personnalisable par IA",
+        'product-timewear': "Montres Chrono",
+        'product-timewear-desc': "Wearables holographiques multizones. Connecte à tous vos vous dans le multivers—désormais avec synthèse émotionnelle.",
+        'product-feature2': "Interface bio-adaptative",
+        'product-art': "Artefacts Quantiques",
+        'product-art-desc': "Forgé à la main par des artistes transdimensionnels, chaque artefact met en forme couleur, son et pensée—un chef-d'œuvre vivant.",
+        'product-feature3': "Certificat d’Authenticité Quantique",
+        stats: "Portée du Marché du Luxe (2030, par dimensions)",
+        vision: "Vision du Luxe Interdimensionnel",
+        'video-desc': "Voyez comment les voyageurs du futur profitent des environnements interdimensionnels, dans une fusion de technologie et de confort suprême.",
+        'footer-txt': "Interdimensional Luxury 2025. Tous droits réservés.",
+        'nav-travel': "Voyages",
+        'nav-experiences': "Expériences",
+        'nav-products': "Produits",
+      },
+      es: {
+        slogan: "Disfruta viajes de lujo, experiencias exclusivas y productos impresionantes<br> en un universo que trasciende dimensiones.",
+        travel: "Viajes Interdimensionales de Lujo",
+        'stellar-cruise': "Cruceros Estelares",
+        'stellar-cruise-desc': "Sube al Infinite Pearl y navega por corrientes hiperdimensionales. Suites, mayordomos IA, cúpulas galácticas panorámicas.",
+        'cruise-1': "Portales de agujero de gusano personales",
+        'cruise-2': "Gastronomía pan-universal",
+        'cruise-3': "Experiencias de spa cuántico",
+        'planetary-lodges': "Alojamientos Planetarios",
+        'planetary-lodges-desc': "Hospédate en cúpulas lujosas en exoplanetas majestuosos: campos de fuerza invisibles, camas antigravedad y ambiente biométrico.",
+        'lodge-1': "Vistas holo de 12 galaxias",
+        'lodge-2': "Navegadores IA personales",
+        'lodge-3': "Manantiales termales nebulosos",
+        'quantum-gateways': "Portales Cuánticos",
+        'quantum-gateways-desc': "Viaja instantáneamente a través de portales cuánticos privados, sin filas ni pasaportes, solo maravilla.",
+        'gateway-1': "Aceleración de punto cero",
+        'gateway-2': "Visitas guiadas dimensionales",
+        'gateway-3': "Diseño de destino personalizado",
+        experiences: "Experiencias Exclusivas",
+        'time-tasting': "Cenas Degustación Temporal",
+        'time-tasting-desc': "Prueba cocina añejada temporalmente mientras ves eventos de líneas temporales alternativas.",
+        'experience-detail1': "Sumiller cuántico incluido",
+        'gravity-ballet': "Ballet de Gravedad Cero",
+        'gravity-ballet-desc': "Disfruta ballet interpretado por artistas interdimensionales en anfiteatros de gravedad cero.",
+        'experience-detail2': "Asientos VIP holográficos",
+        'starrelax': "Relaxarium del Observador de Estrellas",
+        'starrelax-desc': "Medita en cámaras de cristal bajo auroras interdimensionales y paisajes sonoros armónicos.",
+        'experience-detail3': "Guiado por Curador de Mindfulness IA",
+        products: "Productos de Lujo Futuristas",
+        'product-portal': "Portal Dimensional Personal",
+        'product-portal-desc': "Cruza tu propio portal de diseñador—seguro, elegante e integrado con todas tus realidades.",
+        'product-feature1': "IA totalmente personalizable",
+        'product-timewear': "Relojes Crono",
+        'product-timewear-desc': "Wearables holográficos multizona. Conéctate a cualquier tú en el multiverso—ahora con síntesis emocional.",
+        'product-feature2': "Interfaz bio-adaptativa",
+        'product-art': "Artefactos Cuánticos",
+        'product-art-desc': "Forjados por artistas transdimensionales, cada artefacto transforma color, sonido y pensamiento—una obra viva.",
+        'product-feature3': "Certificado de Autenticidad Cuántica",
+        stats: "Alcance del Mercado de Lujo (2030, en dimensiones)",
+        vision: "Visión del Lujo Interdimensional",
+        'video-desc': "Mira cómo los viajeros del futuro disfrutan ambientes interdimensionales, en una combinación de tecnología y confort supremo.",
+        'footer-txt': "Interdimensional Luxury 2025. Todos los derechos reservados.",
+        'nav-travel': "Viajes",
+        'nav-experiences': "Experiencias",
+        'nav-products': "Productos",
+      },
+      zh: {
+        slogan: "体验奢华旅行、独家体验和惊艳产品<br> 于超越空间维度的宇宙中。",
+        travel: "奢华跨维度旅行",
+        'stellar-cruise': "星际豪华游轮",
+        'stellar-cruise-desc': "登上Infinite Pearl游轮，穿越超维度激流。全套房、AI管家、全景银河穹顶。",
+        'cruise-1': "专属虫洞传送门",
+        'cruise-2': "泛宇宙美食",
+        'cruise-3': "量子水疗体验",
+        'planetary-lodges': "行星奢华住宿",
+        'planetary-lodges-desc': "在壮丽系外行星的豪华穹顶住宿：隐形力场、反重力床和生物环境。",
+        'lodge-1': "12星系全息景观",
+        'lodge-2': "私人AI导航",
+        'lodge-3': "星云温泉",
+        'quantum-gateways': "量子之门",
+        'quantum-gateways-desc': "通过私人量子之门瞬间穿越现实——无需排队，无需护照，仅有纯粹的惊奇。",
+        'gateway-1': "零点加速",
+        'gateway-2': "维度定制游",
+        'gateway-3': "专属目的地设计",
+        experiences: "独家体验",
+        'time-tasting': "时间品鉴晚宴",
+        'time-tasting-desc': "享用时空醇化美食，观赏平行时间线事件。",
+        'experience-detail1': "含量子品酒师",
+        'gravity-ballet': "零重力芭蕾",
+        'gravity-ballet-desc': "欣赏跨维艺术家在零重力圆形剧场演出的芭蕾。",
+        'experience-detail2': "VIP全息座位",
+        'starrelax': "仰星静心所",
+        'starrelax-desc': "在水晶舱中冥想，沐浴多维极光与和谐音效。",
+        'experience-detail3': "AI静心顾问引导",
+        products: "未来奢华产品",
+        'product-portal': "个人维度门户",
+        'product-portal-desc': "拥有你专属的维度门户——安全、时尚，联通多重现实。",
+        'product-feature1': "AI全定制",
+        'product-timewear': "时空穿戴设备",
+        'product-timewear-desc': "全息多时区穿戴设备。链接多重宇宙的你——现已支持情感合成。",
+        'product-feature2': "生物自适应界面",
+        'product-art': "量子艺术品",
+        'product-art-desc': "由多维艺术家手工锻造，每件杰作扭曲色彩、声音与思维——活的艺术品。",
+        'product-feature3': "量子鉴定证书",
+        stats: "奢华市场覆盖（2030：各维度）",
+        vision: "跨维度奢华愿景",
+        'video-desc': "观赏未来旅者体验科技与极致舒适融合的跨维环境。",
+        'footer-txt': "Interdimensional Luxury 2025。保留所有维度权利。",
+        'nav-travel': "旅行",
+        'nav-experiences': "体验",
+        'nav-products': "产品",
+      },
+      // More languages (ar, ru, hi, ja, pt, de) can be added similarly...
+    };
+    function setLanguage(locale){
+      const t = translations[locale] || translations['en'];
+      document.querySelectorAll('[data-t]').forEach(el=>{
+        const key=el.getAttribute('data-t');
+        if(key in t){
+          if(el.tagName==='INPUT'||el.tagName==='TEXTAREA')
+            el.placeholder=t[key];
+          else
+            el.innerHTML=t[key];
+        }
+      });
+    }
+    const sel = document.getElementById('locale');
+    sel.addEventListener('change',()=>setLanguage(sel.value));
+    setLanguage('en');
+  </script>
+</body>
+</html>
